@@ -19,6 +19,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="index.php" />
+    <Compile Include="phpinfo.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
