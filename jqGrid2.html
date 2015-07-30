@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link type="text/css" media="screen" href="jqGrid/jquery-ui.min.css" rel="stylesheet" />
+    <link type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
+    <script type="text/javascript" src="jqGrid/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="jqGrid/js/i18n/grid.locale-ja.js"></script>
+
+    <script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#list").jqGrid({
+            url: 'example.php',
+            datatype: 'xml',
+            mtype: 'GET',
+            colNames: ['Inv No', 'Date', 'Amount', 'Tax', 'Total', 'Notes'],
+            colModel: [
+              { name: 'invid', index: 'invid', width: 55 },
+              { name: 'invdate', index: 'invdate', width: 90 },
+              { name: 'amount', index: 'amount', width: 80, align: 'right' },
+              { name: 'tax', index: 'tax', width: 80, align: 'right' },
+              { name: 'total', index: 'total', width: 80, align: 'right' },
+              { name: 'note', index: 'note', width: 150, sortable: false }],
+            pager: jQuery('#pager'),
+            rowNum: 10,
+            rowList: [10, 20, 30],
+            sortname: 'id',
+            sortorder: "desc",
+            viewrecords: true,
+            imgpath: 'themes/basic/images',
+            caption: 'My first grid'
+        });
+    });
+    </script>
+</head>
+<body>
+    <table id="list" class="scroll"></table>
+    <div id="pager" class="scroll" style="text-align:center;"></div>
+</body> 
+</html>

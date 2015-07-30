@@ -18,6 +18,8 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ajaxDB_Select.php" />
+    <Compile Include="example.php" />
     <Compile Include="index.php" />
     <Compile Include="phpinfo.php" />
   </ItemGroup>
@@ -40,6 +42,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="bootstrap_sample.html" />
+    <Content Include="jqGrid.html" />
+    <Content Include="jqGrid2.html" />
+    <Content Include="jqGridDemo.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.3.js" />
