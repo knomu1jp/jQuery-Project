@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <!-- The jQuery library is a prerequisite for all jqSuite products -->
+    <script type="text/javascript" src="jqGrid/js/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="jqGrid/js/jquery.jqGrid.min.js"></script>
+
+
+    <!-- 日本語サポート
+    <script type="text/javascript" src="jqGrid/js/i18n/grid.locale-ja.js"></script>
+    -->
+
+    <script type="text/javascript" src="jqGrid/js/i18n/grid.locale-en.js"></script>
+
+    <link type="text/css" media="screen" href="jqGrid/jquery-ui.min.css" rel="stylesheet" />
+    <link type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+
+    <br /><br />
+
+    <input type="button" value="Select row  with ID 1014" onclick="selectRow()" />&nbsp;
+    <input type="button" value="Get Selected Row" onclick="getSelectedRow()" />
+
+    <br /><br />
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#jqGrid").jqGrid({
+                url: 'getGridData.php?datatype=json',
+                datatype: "json",
+                colModel: [
+					{ label: 'ID', name: 'id', width: 45, key: true },
+					{ label: 'Category Name', name: '情報', width: 75 },
+					{ label: 'Product Name', name: 'テキスト', width: 90 },
+					{ label: 'Country', name: 'コメント', width: 100 },
+                ],
+                loadonce: true,
+                viewrecords: true,
+                width: 780,
+                height: 200,
+                rowNum: 20,
+                rowList: [20, 30, 50],
+                pager: "#jqGridPager"
+            });
+        });
+
+        function getSelectedRow() {
+            var grid = $("#jqGrid");
+            var rowKey = grid.jqGrid('getGridParam', "selrow");
+
+            if (rowKey)
+                alert("Selected row primary key is: " + rowKey);
+            else
+                alert("No rows are selected");
+        }
+
+
+        function selectRow() {
+            jQuery('#jqGrid').jqGrid('setSelection', '1014');
+        }
+
+
+    </script>
+
+</body>
+</html>

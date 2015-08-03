@@ -20,8 +20,10 @@
   <ItemGroup>
     <Compile Include="ajaxDB_Select.php" />
     <Compile Include="example.php" />
+    <Compile Include="getGridData.php" />
     <Compile Include="index.php" />
     <Compile Include="phpinfo.php" />
+    <Compile Include="phpMySql.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
@@ -36,6 +38,8 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="data.json" />
+    <Content Include="empty.json" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -45,6 +49,7 @@
     <Content Include="jqGrid.html" />
     <Content Include="jqGrid2.html" />
     <Content Include="jqGridDemo.html" />
+    <Content Include="jqGrid_MasterDetail.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.11.3.js" />
